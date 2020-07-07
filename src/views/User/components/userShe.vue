@@ -31,7 +31,6 @@ export default {
     MenuUser: function() {
       let that = this;
       getMenuUser().then(res => {
-      console.log(res)
         that.MyMenus = res.data.data.routine_my_menus;
       });
     }

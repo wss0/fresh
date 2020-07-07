@@ -1,5 +1,5 @@
 import axios from 'axios'
-axios.defaults.baseURL = 'https://hema.insideria.vip/api';
+axios.defaults.baseURL = 'http://www.insideria.vip/api';
 axios.defaults.headers.common["Authori-zation"] = "Bearer " + localStorage.getItem("token")
  
 

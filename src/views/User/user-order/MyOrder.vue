@@ -174,7 +174,6 @@ export default {
     // 订单列表
     getOrderList() {
       getOrderList().then(res => {
-        console.log(res.data)
         this.orderList += res.data.data;
       });
     },

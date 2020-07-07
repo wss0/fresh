@@ -21,7 +21,6 @@ export default new Vuex.Store({
     },
     changeHistoryList(state, val){
       state.history_list.push(val)
-      console.log(state.history_list)
     },
     changeShow(state,val){
       state.show = val

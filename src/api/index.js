@@ -162,7 +162,7 @@ export function postOrderComputed(key, data) {
 * @returns {*}
 */
 export function createOrder(key, data) {
-    console.log()
+
     return axios.post("/order/create/" + key, data || {}, {
         headers: {
             "Content-Type": 'application/x-www-form-urlencoded'

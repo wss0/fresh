@@ -364,7 +364,7 @@ export default {
     //点击支付   active是动态绑定的class判断是微信还是余额
     payItem: function(index) {
       this.active = index;
-      console.log("496-支付方式=》" + this.active);
+
       this.computedPrice();
     },
     changeAddress(addressInfo) {
@@ -416,7 +416,6 @@ export default {
             case "EXTEND_ORDER": //再次下单
             case "PAY_DEFICIENCY": //
             case "PAY_ERROR": //支付失败
-              console.log(this.$dialog);
               this.$router.replace({
                 path: url + "/0?msg=" + res.msg
               });
@@ -444,7 +443,6 @@ export default {
           }
         })
         .catch(err => {
-          console.log(err);
           this.$dialog.error(err.msg || "创建订单失败");
           this.$dialog.loading.close();
           // this.$router.go(-1);

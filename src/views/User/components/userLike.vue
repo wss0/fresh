@@ -47,7 +47,7 @@ export default {
   },
   methods: {
     getHomeDate() {
-      axios.get("https://hema.insideria.vip/api/index").then(res => {
+      axios.get("http://www.insideria.vip/api/index").then(res => {
         let that = this;
         that.info.firstList = res.data.data.info.firstList;
       });

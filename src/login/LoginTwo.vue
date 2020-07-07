@@ -48,7 +48,6 @@ export default {
         password: this.password
       };
       login(obj).then(data => {
-        console.log(data)
         this.changeToken(data.data.data.token);
         localStorage.setItem("token", data.data.data.token);
         this.$alert("恭喜您，登录成功", "提示", {

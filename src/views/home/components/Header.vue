@@ -4,6 +4,7 @@
       <div class="top-nav">
         <div class="left">
           <img src="@/assets/search-top/定位.png" alt />
+
           <span class="top-title" :style="{ opacity: 'textOpacity' }" v-if="show">北京路8号</span>
         </div>
         <div class="right">
@@ -84,7 +85,7 @@ export default {
       }
     },
     navScroll() {
-      axios.get("https://hema.insideria.vip/api/index").then(res => {
+      axios.get("http://www.insideria.vip/api/index").then(res => {
         let that = this;
         let list = res.data.data.menus;
         that.menus = list;

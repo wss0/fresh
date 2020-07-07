@@ -185,11 +185,8 @@ export default {
   methods: {
     //获取商品
     getCartList: function() {
-      console.log(1)
       let that = this;
       getCartList().then(res => {
-        //
-        console.log(res)
         that.cartList = res.data;
         
         let checkedIds = cookie.get(CHECKED_IDS) || []; //3 checkedIds
@@ -219,7 +216,6 @@ export default {
     },
     //删除商品；
     delgoods: function() {
-      console.log(list)
       let that = this,
         id = [],
         valid = [],
@@ -250,7 +246,6 @@ export default {
     gainCount: function() {
       let that = this;
       getCartCount().then(res => {
-        console.log(res)
         that.count = res.data.count;
       });
     },
@@ -353,7 +348,6 @@ export default {
 
       //单选 中 选中的商品有几个
       let len = that.cartList.valid.length;
-      console.log(len);
 
       let selectnum = [];
       for (let i = 0; i < len; i++) {

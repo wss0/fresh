@@ -60,7 +60,6 @@ export default {
       getAddressList().then(res => {
         // console.log("新添地址=》74"+res)
         that.addressList = res.data;
-        console.log("新添地址=》76"+that.addressList)
       });
     },
     //点击新添地址   
@@ -69,7 +68,7 @@ export default {
     },
     // 点击已有地址  修改地址
     tapAddress: function(index) {
-      console.log("子传父=》AddressWindow")
+      // console.log("子传父=》AddressWindow")
       this.$emit("checked", this.addressList[index]);
     }
   }

@@ -21,7 +21,8 @@ export default {
   data() {
     return {
       category: [1, 2, 3],
-      active: 0
+      active: 0,
+      arr:[{age:1},{age:2}]
     };
   },
   components: {
@@ -32,10 +33,19 @@ export default {
     HomePicTwo,
     HomeSwiper,
   },
+  watch:{
+    arr:{
+       deep:true,
+       handler(newArr,oldArr){
+          
+       }
+    }
+  },
   methods: {
     oneSortTap(index) {
-      console.log(index);
-    }
+     
+    },
+
   }
 };
 </script>

@@ -2,10 +2,10 @@
   
   <div class="history">
       <!-- 搜索历史  实时热搜  搜索热门品类 -->
-    <div class="one" v-if="list[0]">
+    <div class="one" v-if="history_list[0]">
       <span class="search">搜索历史</span>
       <div class="one-bottom">
-        <span v-for="(item,index) in list" :key='index'>{{item}}</span>
+        <span v-for="(item,index) in history_list" :key='index'>{{item}}</span> 
       </div>
       <div @click="clear">
         点击清除历史记录
@@ -22,14 +22,11 @@
 </template>
 
 <script>
-// import { mapState } from 'vuex'
+import {mapState,mapMutations} from 'vuex'
 import {getSearchKeyword} from "@/api/index.js"
 export default {
   props:['search_history'],
      name: "History",
-    //  computed:{
-    //    ...mapState(['history_list'])
-    //  },
     data(){
       return{
        keywords:[],
@@ -37,12 +34,12 @@ export default {
       }
     },
      mounted(){
-       this.list = this.search_history
       getSearchKeyword().then(res => {
-        
         this.keywords = res.data.data;
-        // console.log(this.keywords)
       });
+     },
+     computed:{
+       ...mapState(['history_list'])
      },
      methods:{
        clear(){

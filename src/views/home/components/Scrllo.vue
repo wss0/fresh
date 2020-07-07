@@ -30,7 +30,6 @@ export default {
   methods: {
       getHomeData(){
         getHomeData().then(res=>{
-          console.log(res.data.data.banner)
           this.banner = res.data.data.banner
         })
       }

@@ -16,7 +16,6 @@ const originalPush = VueRouter.prototype.push;
 var location = "/order/list/:type?"
 VueRouter.prototype.push = function push(location) {
   return originalPush.call(this, location).catch(err => {
-    console.log(1,err)
     return err
   })
 };
@@ -56,10 +55,8 @@ const routes = [
         name: "User",
         component: User,  //我的
         beforeEnter: (to, from, next) => {
-          // console.log(token)
           if (localStorage.getItem('token')) {
             next()
-            console.log(localStorage.getItem('token'))
           } else {
             next('/login')
           }
@@ -107,6 +104,7 @@ const routes = [
     name: "EvaluateList",
     meta: {
       title: "商品评分",
+      login:true
     },
     component: () => import(/*更多商品评价*/"@/views/XiangPages/components/moreEvaluation.vue")
   },
@@ -146,7 +144,9 @@ const routes = [
     path: "*",
     name: "NotDefined",
     meta: {
-      backgroundColor: "#F4F6FB"
+      title:'页面没有',
+      backgroundColor: "#F4F6FB",
+      color:"red"
     },
     component: () => import(/*页面找不到了*/ "@/components/NotDefined")
   }
@@ -158,6 +158,7 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
 
 export default router
 

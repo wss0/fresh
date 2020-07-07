@@ -34,8 +34,7 @@ export default {
       // for (let i = 0; i < this.categoryTwo.length; i++) {
       //   array.push(this.categoryTwo[i].id);
       // }
-      axios.get("https/api/category").then(res => {
-        console.log(res);
+      axios.get("http://www.insideria.vip/api/category").then(res => {
         this.sortList = res.data.data;
       });
     },
@@ -46,7 +45,7 @@ export default {
       for (let i = 0; i < this.sortList.length; i++) {
         array.push(this.sortList[i].id);
       }
-     axios.get("https://hema.insideria.vip/api/products", {
+     axios.get("http://www.insideria.vip/api/products", {
        params:{
          cid:array[index]
        }

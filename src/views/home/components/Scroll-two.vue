@@ -50,7 +50,6 @@ export default {
   methods: {
     GoodScroll() {
       getGoodScroll().then(res => {
-        console.log(res.data);
         // 请求回来的数据
         let hotList = res.data.data.list || [];
         let count = Math.ceil(hotList.length / 3);

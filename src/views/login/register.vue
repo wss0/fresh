@@ -60,7 +60,6 @@ export default {
       getCodeApi()
         .then(res => {
           that.keyCode = res.data.data.key;
-          console.log(that.keyCode)
         })
         .catch(res => {
           that.$dialog.error(res.msg);
@@ -70,7 +69,6 @@ export default {
       if (this.isRun) return; //代表已经运行  就停止下面的操作
       //验证
       if (!/^1\d{10}$/.test(this.userPhone)) {
-        console.log(1, this.userPhone);
         this.$message({
           message: "请保证手机号正确",
           showClose: true,

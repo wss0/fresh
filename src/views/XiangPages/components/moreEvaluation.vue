@@ -44,7 +44,6 @@ export default {
     this.product_id = this.$route.params.id;
     this.getProductReplyCount();
     this.getProductReplyList();
-    console.log(this.reply)
   },
   methods: {
     getProductReplyCount: function() {

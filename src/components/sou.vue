@@ -8,7 +8,7 @@
       <div class="bnt" @click="submit">搜索</div>
     </div>
     <!-- 搜索历史  实时热搜  搜索热门品类 -->
-    <History v-show='!search' :search_history='search_history'
+    <History v-show='!search'   :search_history='search_history'
     @change1="change"
     ></History>
     <!-- 搜索没有商品时 -->
@@ -54,7 +54,6 @@ export default {
   mounted(){
       this.getData()
       this.getGoodlist()
-      console.log(this.$route)
       this.route = this.$route.path
       if(this.route.indexOf(this.router)>-1 ){
          this.status = true
@@ -74,7 +73,8 @@ export default {
       this.flag=false
       this.where.keyword = search;
       this.where.page = 1;
-      this.search_history.push(search)
+      // this.search_history.push(search)
+      this.changeHistoryList(search)
     },
     getGoodlist() {
       let q = this.where;

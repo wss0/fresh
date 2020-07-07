@@ -16,7 +16,10 @@
 
 <script>
 export default {
-  name: "NotDefined"
+  name: "NotDefined",
+  mounted(){
+      
+  }
 };
 </script>
 

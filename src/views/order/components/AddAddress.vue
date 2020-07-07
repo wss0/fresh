@@ -105,7 +105,6 @@ export default {
       let that = this;
       getCity()
         .then(res => {
-          console.log(res)
           that.district = res.data;  // 城市组件  --》获取城市
           that.ready = true;
         })
@@ -124,7 +123,7 @@ export default {
           that.address.province = res.data.province;
           that.address.city = res.data.city;
           that.address.city_id = res.data.city_id;
-         console.log('city_id ='+that.address.city_id, "province =" +that.address.province)
+         
         })
         .catch(err => {
           that.$dialog.error(err.msg);

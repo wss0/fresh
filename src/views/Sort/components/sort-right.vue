@@ -66,7 +66,7 @@ export default {
 
     goDetail() {
       axios
-        .get("https://hema.insideria.vip/api/category", {
+        .get("http://www.insideria.vip/api/category", {
           params: {
             id: 9
           }
@@ -76,7 +76,6 @@ export default {
           //  A.右侧商品复制  --》右侧商品获取商品分类
           this.changeProlist(prolist);
           this.prolist = res.data.data;
-          console.log(this.prolist);
         });
     }
   }

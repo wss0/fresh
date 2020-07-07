@@ -159,7 +159,7 @@ export default {
     getCartList: function() {
       let that = this;
       getCartList().then(res => {
-        console.log(res);
+        // console.log(res);
         that.cartList = res.data;
         let checkedIds = cookie.get(CHECKED_IDS) || [];
         if (!Array.isArray(checkedIds)) checkedIds = [];
@@ -217,7 +217,7 @@ export default {
       let that = this,
         list = that.cartList.valid,
         id = [];
-      console.log(list, id);
+      // console.log(list, id);
       list.forEach(function(val) {
         if (val.checked === true) {
           id.push(val.id);
